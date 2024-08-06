@@ -1,0 +1,6 @@
+# Directories and file extensions to be ignored
+
+/InterviewQs
+/build
+/.vscode
+.exe
