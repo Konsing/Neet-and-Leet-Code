@@ -8,18 +8,16 @@
 
 using namespace std;
 
-int maxSubArray(const vector<int> &nums){
-    int total_sum = 0;
-    int max_sub = nums[0];
+int maxSubArray(vector<int> &nums){
+    int cs = nums[0];
+    int ms = nums[0];
 
-    for(auto n : nums){
-        if(total_sum < 0){
-            total_sum = 0;
-        }
-        total_sum = total_sum + n;
-        max_sub = max(max_sub, total_sum);
+    for (int i = 1; i < nums.size(); i++){
+        cs = max(cs + nums[i], nums[i]);
+        ms = max(ms, cs);
     }
-    return max_sub;
+
+    return ms;
 }
 
 int main(){
